@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* ── Guidance PT Design System ───────────────────────────────────────────────
+   Dark theme (default) — Bold & Energetic
+   Light theme — Clean & Professional
+──────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --primary:        #FF4500;
+  --primary-light:  #FF6B35;
+  --primary-dark:   #CC3700;
+  --success:        #22C55E;
+  --warning:        #F59E0B;
+  --error:          #EF4444;
+}
+
+/* ── Dark theme ──────────────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg:             #0F0F0F;
+  --surface:        #1A1A1A;
+  --surface-2:      #242424;
+  --surface-3:      #2E2E2E;
+  --border:         #333333;
+  --text:           #FFFFFF;
+  --text-secondary: #A0A0A0;
+  --text-muted:     #666666;
+  --input-bg:       #242424;
+  --input-text:     #FFFFFF;
+}
+
+/* ── Light theme ─────────────────────────────────────────────────────────── */
+[data-theme="light"] {
+  --bg:             #F5F5F5;
+  --surface:        #FFFFFF;
+  --surface-2:      #F0F0F0;
+  --surface-3:      #E8E8E8;
+  --border:         #E0E0E0;
+  --text:           #111111;
+  --text-secondary: #555555;
+  --text-muted:     #999999;
+  --input-bg:       #FFFFFF;
+  --input-text:     #111111;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+input, textarea, select {
+  color: var(--input-text) !important;
+  background-color: var(--input-bg) !important;
+  border-color: var(--border) !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted) !important;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
